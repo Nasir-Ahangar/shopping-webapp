@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Free ecommerce template by @webdezign</title>
+<title>My Cart</title>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" />
 <link rel="stylesheet" href="{{ STATIC_URL }}css/cart_style.css" />
 <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css'>
 <!-- The below script Makes IE understand the new html5 tags are there and applies our CSS to it -->
@@ -11,8 +12,36 @@
 <![endif]-->
 </head>
 <body>
+        <div class="header">
+            <div>
+                <a style="width: 200px;" href="/" id="logo"><img style="width: 200px;" src="{{ STATIC_URL }}images/logo.gif" alt="logo"/></a>
+                <div class="navigation">
+                <!--    <ul class="first">
+                        <li class="first"><a href="#">ON SALE</a></li>
+                        <li><a href="#">BEST SELLERS</a></li>
+                        <li><a href="#">THE BLOG</a></li>
+                    </ul> -->
+                    <ul>
+                        <li><a href="#">My Cart</a></li>
+                        <li><a href="http://106.186.16.106/admin">Login</a></li>
+                    </ul>
+                </div>
+             
+            </div>
+
+            <div id="navigation">
+                <ul>
+                    <li class="selected" ><a href="/">Home</a></li>
+                    <li ><a href="#">About us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms & Condtions</a></li>
+                   
+                  
+                </ul>
+            </div>
+        </div>
 <article id="basket">
-<h1>sssssshopping Bag</h1>
+<h1>shopping Bag</h1>
 <div style=" color: #c09853;
   background-color: #fcf8e3;
   border-color: #faebcc;text-align:center"><h2>{{mesg}}</h2></div>
