@@ -55,6 +55,17 @@ class CartView(generic.TemplateView):
         return self.render_to_response({'productobj':productobj, 'product_id':product_id,'total':total,'mesg':mesg,
         })
 
+class MyCartView(generic.TemplateView):
+    template_name = 'trialshop/mycart.html'
+    def get(self,request,):
+        productobj=Product.objects.order_by('-pub_date')#[:5]
+        total=0
+        for i in productobj:
+            if i.cart_value:
+                total=total+i.product_price
+        return self.render_to_response({'productobj':productobj, 'total':total,
+        })        
+
 class CartRemove(generic.TemplateView):
     template_name = 'trialshop/viewcart.html'
     def get(self,request,*args,**kwargs):
